@@ -352,6 +352,7 @@ const touch = e.touches[0]
 })
 
 window.addEventListener("touchmove" ,e => {
+e.preventDefault()
 const touch = e.touches[0]
   if(!controledCharge) return;
   controledCharge.x = touch.pageX
