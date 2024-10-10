@@ -341,7 +341,7 @@ rangeEl.addEventListener('input', e => {
 })
     addPositive.innerHTML = rangeEl.value + "q 'luk yük ekle"
 
-window.addEventListener('touchdown',e => {
+window.addEventListener('touchstart',e => {
 const touch = e.touches[0]
     const x = touch.pageX
     const y = touch.pageY
@@ -361,7 +361,7 @@ const touch = e.touches[0]
 
 
 })
-window.addEventListener("touchup" ,e => {
+window.addEventListener("touchend" ,e => {
 const code = e.code.toLowerCase()
 
       if(code == 'keyw') controledCharge.qWithNoUnit +=  1
