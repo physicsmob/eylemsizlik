@@ -342,7 +342,7 @@ rangeEl.addEventListener('input', e => {
     addPositive.innerHTML = rangeEl.value + "q 'luk yük ekle"
 
 window.addEventListener('touchdown',e => {
-const touch e.touches[0]
+const touch = e.touches[0]
     const x = touch.clientX
     const y = touch.clientY
     const charge = charges.find(c => ((c.x - x)**2 + (c.y-y)**2) ** (1/2) < 15)
@@ -352,7 +352,7 @@ const touch e.touches[0]
 })
 
 window.addEventListener("touchmove" ,e => {
-const touch e.touches[0]
+const touch = e.touches[0]
   if(!controledCharge) return;
   controledCharge.x = touch.clientX
   controledCharge.y = touch.clientY
