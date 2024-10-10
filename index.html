@@ -341,26 +341,27 @@ rangeEl.addEventListener('input', e => {
 })
     addPositive.innerHTML = rangeEl.value + "q 'luk yük ekle"
 
-window.addEventListener('mousedown',e => {
-    const x = e.clientX
-    const y = e.clientY
+window.addEventListener('touchdown',e => {
+const touch e.touches[0]
+    const x = touch.clientX
+    const y = touch.clientY
     const charge = charges.find(c => ((c.x - x)**2 + (c.y-y)**2) ** (1/2) < 15)
     controledCharge = charge
 
     if(charge) charge.control = true
 })
 
-window.addEventListener("mousemove" ,e => {
-
+window.addEventListener("touchmove" ,e => {
+const touch e.touches[0]
   if(!controledCharge) return;
-  controledCharge.x = e.clientX
-  controledCharge.y = e.clientY
+  controledCharge.x = touch.clientX
+  controledCharge.y = touch.clientY
   controledCharge.vx = 0
   controledCharge.vy = 0
 
 
 })
-window.addEventListener("keydown" ,e => {
+window.addEventListener("touchup" ,e => {
 const code = e.code.toLowerCase()
 
       if(code == 'keyw') controledCharge.qWithNoUnit +=  1
