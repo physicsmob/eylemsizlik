@@ -343,8 +343,8 @@ rangeEl.addEventListener('input', e => {
 
 window.addEventListener('touchdown',e => {
 const touch = e.touches[0]
-    const x = touch.clientX
-    const y = touch.clientY
+    const x = touch.pageX
+    const y = touch.pageY
     const charge = charges.find(c => ((c.x - x)**2 + (c.y-y)**2) ** (1/2) < 15)
     controledCharge = charge
 
@@ -354,8 +354,8 @@ const touch = e.touches[0]
 window.addEventListener("touchmove" ,e => {
 const touch = e.touches[0]
   if(!controledCharge) return;
-  controledCharge.x = touch.clientX
-  controledCharge.y = touch.clientY
+  controledCharge.x = touch.pageX
+  controledCharge.y = touch.pageY
   controledCharge.vx = 0
   controledCharge.vy = 0
 
